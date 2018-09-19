@@ -1,0 +1,46 @@
+<!--user.wxml-->
+<view wx:if="{{web_show}}">
+  <view class="banner"> 
+    <image src="/images/user_banner.jpg"> </image>
+    <view class="user_top">
+      <view class="user_img">
+            <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view class="member_name">{{web_mainData.info.data[0].info.name}}</view>
+      <view class="member_phone">{{web_mainData.info.data[0].info.phone}}</view>
+      <view class="location flexRowBetween">
+          <view class="local_img" style="height:40rpx;align-items:center;"><image src="/images/user_icon1.png"></image></view>
+          <view class="local_address" style="height:40rpx;align-items:center;">地址：{{web_mainData.info.data[0].info.address}}</view>
+      </view>
+    </view>
+  </view>
+  <view id="user" class="flexRowBetween">
+    <view class="user_item" style="background:#f2f9ff;"  bindtap="intoPath" data-path="/pages/dealerStore/dealerStore">
+      <view class="user_image"><image src="/images/user_icon2.png"></image></view>
+      <view class="user_txt">下级店铺</view>
+    </view>
+    <view class="user_item" style="background:#fffcf2;"   bindtap="intoPath" data-path="/pages/dealerCredit/dealerCredit">
+      <view  class="user_image"><image src="/images/user_icon3.png"></image></view>
+      <view class="user_txt">我的佣金</view>
+    </view>
+    <view class="user_item" style="background:#fff2f4;" bindtap="intoPath" data-path="/pages/dealerCash/dealerCash">
+      <view  class="user_image"><image src="/images/user_icon4.png"></image></view>
+      <view class="user_txt">提现</view>
+    </view>
+    <view class="user_item" style="background:#f9f2ff;"  bindtap="intoPath" data-path="/pages/dealerOrder/dealerOrder">
+      <view  class="user_image"><image src="/images/user_icon5.png"></image></view>
+      <view class="user_txt">我的订单</view>
+    </view>
+    <view class="user_item" style="background:#fff9f2;" bindtap="intoPath" data-path="/pages/dealerOrderNext/dealerOrderNext">
+      <view  class="user_image"><image src="/images/user_icon6.png"></image></view>
+      <view class="user_txt">下级订单</view>
+    </view>
+   <view class="user_item" style="background:#f2fffe;" bindtap="intoPath" data-path="/pages/dealerPoster/dealerPoster">
+      <view  class="user_image"><image src="/images/user_icon8.png"></image></view>
+      <view class="user_txt">二维码</view>
+    </view>
+  </view>
+  <view class="solely" style="font-size:20rpx;color:#666;text-align:center">
+    技术支持:西安纯粹科技有限公司
+  </view>
+</view>

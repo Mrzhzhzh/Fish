@@ -1,0 +1,250 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.2",
+	"appid": "wx3bb2403f1f1e189d",
+	"projectname": "%E5%A8%83%E5%A8%83%E9%B1%BC",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 34,
+			"list": [
+				{
+					"id": -1,
+					"name": "order",
+					"pathName": "pages/userOrder/userOrder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "team",
+					"pathName": "pages/userTeam/userTeam",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "manadd",
+					"pathName": "pages/userAddress/userAddress",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "sendIN",
+					"pathName": "pages/sendInformation/sendInformation",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "credit",
+					"pathName": "pages/userCredit/userCredit",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "credit",
+					"pathName": "pages/User/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "detail",
+					"pathName": "pages/indexDetail/indexDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "comfioerm",
+					"pathName": "pages/indexDetailOrder/indexDetailOrder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "comfioerm",
+					"pathName": "pages/User/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "sign",
+					"pathName": "pages/sign/sign",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "share",
+					"pathName": "pages/share/share",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "ranking",
+					"pathName": "pages/ranking/ranking",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加地址",
+					"pathName": "pages/userAddressnew/userAddressnew",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的地址",
+					"pathName": "pages/userAddress/userAddress",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发布",
+					"pathName": "pages/sendInformation/sendInformation",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的积分",
+					"pathName": "pages/userCredit/userCredit",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的二维码",
+					"pathName": "pages/userPoster/userPoster",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "编写发布",
+					"pathName": "pages/sendInformation/sendInformation",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发布",
+					"pathName": "pages/sendInformation/sendInformation",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "签到",
+					"pathName": "pages/sign/sign",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分享",
+					"pathName": "pages/share/share",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的订单",
+					"pathName": "pages/userOrder/userOrder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发布主页",
+					"pathName": "pages/Send/send",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "deatil",
+					"pathName": "pages/indexDetail/indexDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": 26,
+					"name": "deatil",
+					"pathName": "pages/indexDetail/indexDetail",
+					"query": "id=32"
+				},
+				{
+					"id": -1,
+					"name": "购买",
+					"pathName": "pages/buy/buy",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/user/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "详情",
+					"pathName": "pages/userOrderDeatil/userOrderDeatil",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "经销商1",
+					"pathName": "pages/dealers/dealers",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "经销商user",
+					"pathName": "pages/dealersUser/dealersUser",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "经销商店铺",
+					"pathName": "pages/dealerStore/dealerStore",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "体现",
+					"pathName": "pages/dealerCash/dealerCash",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "代理",
+					"pathName": "pages/userAgent/userAgent"
+				}
+			]
+		}
+	}
+}

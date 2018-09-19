@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/buy/buy",
+    "pages/user/user",
+    "pages/userOrder/userOrder",
+    "pages/userAddress/userAddress",
+    "pages/userAdressCom/userAdressCom",
+    "pages/userAddressNew/userAddressNew",
+    "pages/userOrderDeatil/userOrderDeatil",
+    "pages/userOrderDeatilTwo/userOrderDeatilTwo",
+    "pages/dealers/dealers",
+    "pages/dealers1/dealers1",
+    "pages/dealersUser/dealersUser",
+    "pages/dealerStore/dealerStore",
+    "pages/dealerCredit/dealerCredit",
+    "pages/dealerCash/dealerCash",
+    "pages/dealerCashMo/dealerCashMo",
+    "pages/dealerOrder/dealerOrder",
+    "pages/dealerOrderNext/dealerOrderNext",
+    "pages/dealerPoster/dealerPoster",
+    "pages/userAgent/userAgent",
+    "pages/login/login"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "black"
+  }
+}

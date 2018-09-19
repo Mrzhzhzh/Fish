@@ -1,0 +1,82 @@
+/**index.wxss**/
+
+@import "../../wxParse/wxParse.wxss"; 
+#buy{
+	width:100%;
+	height:100%;
+	position:relative;
+}
+#buy image{
+	width:100%;
+	height:805rpx;
+}
+.buy_cont{
+	padding:84rpx 6% 0;
+	width:88%;
+	position:absolute;
+	top:0;
+}
+.input_before{
+	width:15%;
+	font-size:34rpx;
+	color:#4c4c4c;
+}
+.buy_wirte{
+	height:68rpx;
+	margin-bottom:56rpx;
+}
+.buy_input{
+	width:60%;
+	border:solid 1px #e0e0e0;
+	border-radius:10rpx;
+	background:#fff;
+	padding:0 2%;
+}
+.buy_input input{
+	padding:0 2%;
+	width:86%;
+	font-size:26rpx;	
+}
+.submit_info{
+	width:539rpx;
+	margin-top:40rpx;
+}
+.regular{
+	padding:0rpx 40rpx;
+	margin-top:50rpx;
+}
+.regular_cont{
+	width:98%;
+	padding:0 1%;
+	height:335rpx;
+	border-radius:20rpx;
+	position:relative;
+	border:solid 1px #e0e0e0;
+	border-radius:10rpx;
+}
+.regular_tlt{
+	color:#333;
+	position:absolute;
+	top:-25rpx;
+	width:240rpx;
+	height:50rpx;
+	line-height:50rpx;
+	text-align:center;
+	background:#fff;
+	left:50%;
+	margin-left:-120rpx;
+}
+.regular_item{
+	color:#b2b2b2;
+	margin-top:40rpx;
+	line-height:40rpx;
+}
+.w670{
+	position:relative;
+	top:0;
+}
+
+.ql-editor{
+	font-size:26rpx;
+	color:#999;
+}

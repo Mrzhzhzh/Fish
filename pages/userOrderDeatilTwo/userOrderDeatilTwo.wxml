@@ -1,0 +1,38 @@
+<view class="w710">
+	<view class="detail p40">
+		<view class="detail_list flexRowBetween" wx:if="{{web_mainData.user.behavior==1}}">
+			<view class="detail_left">店铺:</view>
+			<view class="detail_right">{{web_mainData.user.login_name}}</view>
+		</view>
+		<view class="detail_list flexRowBetween" wx:if="{{web_mainData.user.behavior==1}}">
+			<view class="detail_left">姓名:</view>
+			<view class="detail_right">{{web_mainData.userInfo.name}}</view>
+		</view>
+		<view class="detail_list flexRowBetween">
+			<view class="detail_left">时间:</view>
+			<view class="detail_right">{{web_mainData.create_time}}</view>
+		</view>
+		<view class="detail_list flexRowBetween">
+			<view class="detail_left" style="width:22%;">交易编号:</view>
+			<view class="detail_right"  style="width:78%;">{{web_mainData.order_no }}</view>
+		</view>
+		<view class="detail_list flexRowBetween">
+			<view class="detail_left">卡号:</view>
+			<view class="detail_right">{{web_mainData.passage1?web_mainData.passage1:'暂未发卡'}}</view>
+		</view>
+		<view class="detail_list flexRowBetween">
+			<view class="detail_left" style="color:#e62c2c">金额:</view>
+			<view class="detail_right" style="color:#e62c2c">{{web_mainData.price}}</view>
+		</view>
+		<view class="detail_list flexRowBetween">
+			<view class="detail_left"  style="width:22%;">物流编号:</view>
+			<view class="detail_right"  style="width:78%;">{{web_mainData.express_info?web_mainData.express_info:'暂未发货'}}</view>
+		</view>
+		<view class="left_img">
+			<image src="/images/circle1.png"></image>
+		</view>
+		<view class="right_img">
+			<image src="/images/circle2.png"></image>
+		</view>
+	</view>
+</view>

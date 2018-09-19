@@ -1,0 +1,138 @@
+/**index.wxss**/
+@import "../../wxParse/wxParse.wxss"; 
+view{
+	color:#666;
+}
+
+.banner{
+	width:100%;
+	height:450rpx;
+	overflow:hidden;
+}
+.banner image{
+	width:100%;
+	height:450rpx;
+}
+.index_cont{
+	padding:30rpx 0 50rpx;
+}
+.card_info{
+	height:95rpx;
+	border-bottom:solid 1px #e6e6e6;
+}
+.card_img{
+	width:8.5%;
+	text-align:center;
+}
+.card_img image{
+	width:30rpx;
+	height:35rpx;
+}
+.input_before{
+	width:14.5%;
+	font-size:28rpx;
+	color:#333;
+}
+.card_input{
+	width:77%;
+	font-size:24rpx;
+}
+.authCode image{
+	width:92rpx;
+	height:40rpx;
+	text-align:center;
+}
+.changeCode{
+	font-size:20rpx;
+	color:#00baf1;
+}
+.w100{
+	box-shadow:0 0 10rpx #d9f7ff;
+	border-radius:10rpx;
+	background:#fff;
+}
+.w710{
+	position:relative;
+	bottom:132rpx;
+}
+.submit_info{
+	margin-top:40rpx;
+}
+.regular{
+	padding:0rpx 40rpx;
+	margin-top:50rpx;
+}
+.regular_cont{
+	width:98%;
+	padding:0 1%;
+	height:400rpx;
+	border-radius:20rpx;
+	position:relative;
+	border:solid 1px #e0e0e0;
+	border-radius:10rpx;
+}
+.regular_tlt{
+	color:#333;
+	position:absolute;
+	top:-25rpx;
+	width:240rpx;
+	height:50rpx;
+	line-height:50rpx;
+	text-align:center;
+	background:#fff;
+	left:50%;
+	margin-left:-120rpx;
+}
+.regular_item{
+	color:#b2b2b2;
+	margin-top:40rpx;
+	line-height:40rpx;
+}
+.w670{
+	position:relative;
+	top:0;
+}
+.ql-editor{
+	font-size:26rpx;
+	color:#999;
+}
+/***********弹框**************/
+.qcored{
+	width:68%;
+	height:530rpx;
+	background:#fff;
+	position:fixed;
+	margin:0px auto;
+	text-align:center;
+	bottom:30%;
+	left:16%;
+	box-shadow:0rpx 0rpx 20rpx #666;
+	transition:all 1s;
+}
+
+.qcoreds image{
+	width:282rpx;
+	height:282rpx;
+	margin-top:80rpx;
+}
+.qcored_cont{
+	position:relative;
+}
+.close image{
+	position:absolute;
+	right:-36rpx;
+	top:-36rpx;
+	width:72rpx;
+	height:72rpx;
+}
+.mask{
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.5);
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:999;
+	overflow:hidden;
+	transition:all 1s;
+}

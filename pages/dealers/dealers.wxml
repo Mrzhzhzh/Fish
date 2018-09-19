@@ -1,0 +1,44 @@
+<!--dealers.wxml-->
+<view style="width:100%;" class="flexRowBetween process">
+	<view class="process1">
+		<view class="img_h">
+				<image src="/images/progress1.jpg"></image>
+		</view>
+		<view class="txt this_txt">填写经销商信息</view>
+	</view>
+	<view class="process2">
+		<view class="img_h">
+				<image src="/images/progress2.jpg"></image>
+		</view>
+		<view class="txt">审核中</view>
+	</view>
+	<view class="process3">
+		<view class="img_h">
+				<image src="/images/progress3.jpg"></image>
+		</view>
+		<view class="txt">审核完成</view>
+	</view>
+</view>
+<view class="w710">
+	<view class="user_input">
+		<view class="users_detail flexRowBetween">
+			<view class="input_note">姓名:</view>
+			<input placeholder="请输入姓名" value="{{web_mainData.name}}"  data-key="name" bindblur="inputChange"></input>
+		</view>
+	</view>
+	<view class="user_input">
+		<view class="users_detail flexRowBetween">
+			<view class="input_note">电话:</view>
+			<input placeholder="请输入电话" value="{{web_mainData.name}}"  data-key="name" bindblur="inputChange"></input>
+		</view>
+	</view>
+	<view class="user_input">
+		<view class="users_detail flexRowBetween">
+			<view class="input_note">地址:</view>
+			<input placeholder="请填写地址" value="{{web_mainData.name}}"  data-key="name" bindblur="inputChange"></input>
+		</view>
+	</view>
+</view>
+<view class="submit_info" style="margin-top:50rpx;"  bindtap="intoPath" data-path="/pages/dealers1/dealers1">
+		下一步
+</view>

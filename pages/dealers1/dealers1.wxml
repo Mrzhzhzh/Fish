@@ -1,0 +1,39 @@
+<!--dealers.wxml-->
+<view style="width:100%;" class="flexRowBetween process">
+	<view class="process1">
+		<view class="img_h">
+				<image src="/images/progress1.jpg"></image>
+		</view>
+		<view class="txt this_txt">填写经销商信息</view>
+	</view>
+	<view class="process2">
+		<view class="img_h">
+				<image src="/images/progress2_a.jpg"></image>
+		</view>
+		<view class="txt this_txt">审核中</view>
+	</view>
+	<view class="process3">
+		<view class="img_h">
+				<image src="/images/progress3.jpg"></image>
+		</view>
+		<view class="txt">审核完成</view>
+		<!--
+		<view class="img_h">
+				<image src="/images/progress3_a.jpg"></image>
+		</view>
+		<view class="txt this_txt">审核完成</view> -->
+	</view>
+</view>
+<view class="dealers_b">
+	<image src="/images/dealers_b.png"></image>
+	<view class="staus">
+		<view class="status_in"  bindtap="intoPath" data-path="/pages/dealersUser/dealersUser">
+			<image src="/images/dealers_icon1.png"></image>
+			<view style="font-size:26rpx;color:#eee;position:absolute;top:52%;width:100%;text-align:center;">
+			审核中...</view>
+		</view>
+	</view>
+</view>
+<view style="font-size:28rpx;color:#666;margin-top:90rpx;width:100%;text-align:center;">提交成功，请等待管理员审核！</view>
+<!--
+<view style="font-size:28rpx;color:#666;margin-top:90rpx;width:100%;text-align:center;">审核成功</view> -->

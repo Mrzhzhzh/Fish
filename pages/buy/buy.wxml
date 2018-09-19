@@ -1,0 +1,92 @@
+<!--buy.wxml-->
+<view class="w710"> 
+  <view id="buy">
+    <image src="/images/buy_bg.jpg"></image>
+    <view class="buy_cont">
+        <view class="buy_wirte flex">
+          <view class="input_before">分类:</view>
+          <view class="buy_input flex">
+              <picker bindchange="bindPickerChange" value="{{web_chooseIndex}}" range="{{web_mainData}}" range-key="title" style="width:90%;font-size:26rpx;color:#999" data-id="{{web_mainData[web_chooseIndex].id}}">
+                  当前选择:{{web_mainData[web_chooseIndex].title}}
+              </picker>  
+            <view class="next_icon" style="width:10%;text-align:right;">
+              <image src="/images/next_page.jpg" style="width:18rpx;height:33rpx;"></image>
+            </view>
+          </view>
+        </view>
+        <block wx:for="{{web_cardNum}}" wx:key="key">
+          <view class="buy_wirte flex">
+            <view class="input_before">卡号:</view>
+            <view class="buy_input">
+              <input placeholder="请选择分类" bindblur="changeBind" data-key="passage1" data-index="{{index}}" ></input>
+            </view>
+            <view class="next_icon" style="width:18.5%;text-align:center;height:60rpx;" bindtap="addCardNum">
+                <image src="/images/buy_add.png" style="width:60rpx;height:60rpx;"></image>
+              </view>
+          </view>
+        </block>
+        
+        <view class="flex">
+          <view class="input_before">金额:</view>
+          <view  style="font-size:36rpx;color:#ff1212;">
+            {{web_mainData[web_chooseIndex].price*web_cardNum.length}}元
+          </view>
+        </view>
+        <view class="flex" style="margin-top:50rpx;">
+          <view class="input_before" style="width:22%;">手机号:</view>
+          <view class=""  style="width:74%;padding:0 2%;border-bottom:solid 1px #e0e0e0;">
+            <input placeholder="请输入手机号" style="font-size:26rpx;" bindinput="changeBind" data-key="passage4" value="{{web_submitData.passage4}}"></input>
+          </view> 
+          
+        </view>
+        <view style="padding-left:22%;font-size:20rpx;color:#666;margin-top:20rpx;">
+            (说明：卡号和手机号码必填一项，如无卡号请 填写手机号码，我们将会安排专人30分钟内与 您取得联系)
+        </view>
+        <view class="submit_info" bindtap="{{!buttonClicked?'addOrder':''}}">
+          立即支付
+        </view>
+    </view>
+  </view>
+  <view id="regular">
+    <view class="regular">
+      <view class="regular_cont">
+          <view class="regular_tlt">
+              {{web_artData.title}}
+          </view>
+          <view class="regular_item">
+            <view class="content ql-editor" >
+                <import src="../../wxParse/wxParse.wxml"/>
+                <template is="wxParse" data="{{wxParseData:web_artData.content}}"/>
+            </view> 
+          </view>
+      </view>
+    </view>
+    </view>
+</view>
+<view class="solely" style="font-size:20rpx;color:#666;text-align:center;">
+  技术支持:西安纯粹科技有限公司
+</view>
+<view style="height:120rpx;width:100%;">
+</view>
+<view class="navbar">
+    <view class="navbar_item" bindtap="intoPathRedi" data-path="/pages/index/index">
+        <view class="nav_img">
+          <image src="/images/navbar1.png" style="width:44rpx;height:44rpx;"></image>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">首页</view>
+    </view>
+    <view class="navbar_item"  >  
+        <view class="nav_img">
+           <image src="/images/navbar2-a.png" style="width:44rpx;height:44rpx;"></image>
+        </view>
+        <view class="text this-text" style="{{fonts[2].font}}">购买</view>    
+    </view> 
+    <view class="navbar_item"  bindtap="intoPathRedi" data-path="/pages/user/user">
+        <view class="nav_img">
+            <image src="/images/navbar3.png" style="width:44rpx;height:44rpx;"></image>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">我的</view>
+    </view>
+</view>
+
+

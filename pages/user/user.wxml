@@ -1,0 +1,97 @@
+<!--user.wxml-->
+<view class="banner" wx:if="{{web_mainData.behavior=='0'}}"> 
+  <image src="/images/user_banner.png"> </image>
+  <view class="user_top">
+    <view class="user_img">
+          <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class="member_name"><span><open-data  type="userNickName" ></open-data></span></view>
+    <view class="member_phone">13302144444</view>
+  </view>
+</view>
+
+<view class="banner" wx:else> 
+  <image src="/images/agent_banner.jpg" style="height:540rpx"> </image>
+  <view class="user_top">
+    <view class="user_img">
+          <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class="member_name">{{web_mainData.info.name}}</view>
+    <view class="member_phone">{{web_mainData.info.phone}}</view>
+    <view class="agent">
+        <view class="agent_cont">
+              <view style="width:100%;margin-top:20rpx;" class="flexRowBetween">
+                  <view style="width:100%;overflow:hidden;height:40rpx;" class="flexRowBetween">
+                      <view style="width:15%;height:40rpx;overflow:hidden;align-items:center;">
+                          <image src="/images/agent_icon1.png" style="width:36rpx;height:36rpx;"></image>
+                      </view>
+                      <view style="width:85%;font-size:28rpx;color:#666;height:40rpx;" class="avoidOverflow">编码：{{web_mainData.user_no}}</view>
+                  </view>
+              </view>
+              <view style="width:100%;margin-top:20rpx;" class="flexRowBetween">
+                  <view style="width:100%;overflow:hidden;height:40rpx;" class="flexRowBetween">
+                      <view style="width:15%;height:40rpx;overflow:hidden;align-items:center;">
+                          <image src="/images/agent_icon2.png" style="width:36rpx;height:36rpx;"></image>
+                      </view>
+                      <view style="width:85%;font-size:28rpx;color:#666;height:40rpx;" class="avoidOverflow">名称:{{web_mainData.login_name}}</view>
+                  </view>
+              </view>
+              <view style="width:100%;margin-top:20rpx;" class="flexRowBetween">
+                <view style="width:100%;margin-top:20rpx;height:40rpx;" class="flexRowBetween">
+                    <view style="width:7%;height:40rpx;overflow:hidden;align-items:center;">
+                        <image src="/images/agent_icon2.png" style="width:36rpx;height:36rpx;"></image>
+                    </view>
+                    <view style="width:93%;font-size:28rpx;color:#666;height:40rpx;" class="avoidOverflow">地址:{{web_mainData.info.address}}</view>
+                </view>
+              </view>
+        </view>
+    </view>
+  </view>
+</view>
+<view id="user" class="flexRowBetween">
+  <view class="user_item" style="background:#f2f9ff;{{web_mainData.behavior=='0'?'':'margin-top:140rpx'}}"  bindtap="intoPath" data-path="/pages/userOrder/userOrder">
+    <view style="height:140rpx;line-height:140rpx;"><image src="/images/user1.png"></image></view>
+    <view class="user_txt">我的订单</view>
+  </view>
+  <view class="user_item" style="background:#f2fff5;{{web_mainData.behavior=='0'?'':'margin-top:140rpx'}}"   bindtap="intoPath" data-path="/pages/userAddress/userAddress">
+    <view style="height:140rpx;line-height:140rpx;"><image src="/images/user2.png"></image></view>
+    <view class="user_txt">收货地址</view>
+  </view>
+  <view class="user_item" style="background:#f2fff5;" bindtap="intoPath" data-path="/pages/login/login">
+    <view style="height:140rpx;line-height:140rpx;"><image src="/images/user3.png"></image></view>
+    <view class="user_txt">经销商入口</view>
+  </view>
+  <view class="user_item" style="background:#f2f9ff;"  bindtap="intoPath" data-path="/pages/userAgent/userAgent">
+    <view style="height:140rpx;line-height:140rpx;"><image src="/images/user4.png"></image></view>
+    <view class="user_txt">代理申请</view>
+  </view>
+</view>
+<view class="solely" style="font-size:20rpx;color:#666;text-align:center;">
+  技术支持:西安纯粹科技有限公司
+</view>
+<view style="height:120rpx;width:100%;">
+</view>
+
+
+<view class="navbar">
+    
+    <view class="navbar_item"   bindtap="intoPathRedi" data-path="/pages/index/index">
+        <view class="nav_img">
+          <image src="/images/navbar1.png" style="width:44rpx;height:44rpx;"></image>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">首页</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedi" data-path="/pages/buy/buy">
+        <view class="nav_img">
+           <image src="/images/navbar2.png" style="width:44rpx;height:44rpx;"></image>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">购买</view>
+    </view>
+    <view class="navbar_item" >
+        <view class="nav_img">
+            <image src="/images/navbar3-a.png" style="width:44rpx;height:44rpx;"></image>
+        </view>
+        <view class="text this-text" style="{{fonts[2].font}}">我的</view>
+    </view>
+</view>
+

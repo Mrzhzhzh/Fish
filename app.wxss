@@ -1,0 +1,85 @@
+/**app.wxss**/
+page{
+	width:100%;
+	min-height:100%;
+} 
+.flex{
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+}
+.flexRowBetween{
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	align-items:center;
+}
+.avoidOverflow{
+	overflow-y:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+.w710{
+	width:94.8%;
+	padding:0 2.6%;
+}
+.p40{
+	padding:0 5.6%;
+	width:88.8%;
+}
+.w100{
+	width:100%;
+}
+.w670{
+	padding:0 5.3%;
+	width:89.4%;
+}
+/***********navbar***********/
+.navbar{
+	height:110rpx;
+	width:100%;
+	position:fixed;
+	bottom:0rpx;
+	z-index:999;
+	background:#fff;
+	display:flex;
+	justify-content:center;
+	border-top:solid 1px #dbdbdb;
+	align-items:center;
+	box-shadow:5rpx 0 15rpx #84ddf3;
+}
+.nav_img image{
+	width:46rpx;
+	height:46rpx;
+}
+.navbar_item{
+	width:33.3%;
+	text-align:center;
+
+}
+.navbar .text{
+	color:#b3b3b3;
+	font-size:24rpx;
+}
+.navbar .this-text{
+	color:#00baf1;
+}
+
+.navigator-hover {
+	background:none;
+	color:#00baf1;
+}
+.submit_info{
+	margin:0rpx auto;
+	width:300rpx;
+	height:80rpx;
+	line-height:80rpx;
+	text-align:center;
+	font-size:36rpx;
+	border-radius:50rpx;
+	color:#fff;
+	background:linear-gradient(to right,rgba(166,205,7,1.00),rgba(0,186,241,1.00));
+	border-radius:10rpx;
+}
+
+

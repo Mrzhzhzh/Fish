@@ -1,0 +1,37 @@
+<!--manageAddress.wxml-->
+<view class="user_input">
+	<view class="users_detail flexRowBetween">
+		<view class="input_note" >姓名:</view>
+		<input placeholder="请填写姓名" value="{{web_sForm.name}}"  data-key="name" bindblur="changeBind"></input>
+	</view>
+</view>
+<view class="user_input">
+	<view class="users_detail flexRowBetween">
+		<view class="input_note">电话:</view>
+		<input placeholder="请填写电话" value="{{web_sForm.phone}}"  data-key="phone" bindblur="changeBind"></input>
+	</view>
+</view>
+<view class="user_input">
+	<view class="users_detail flexRowBetween">
+		<view class="input_note" style="width:27%;">经销商编码:</view>
+		<view style="width:73%;"><input placeholder="请填写电话" value="{{web_sForm.parent_no}}"  data-key="parent_no" bindblur="changeBind"></input></view>
+	</view>
+</view>
+<view class="user_input">
+	<view class="users_detail flexRowBetween">
+		<view class="input_note" style="width:24%;">店铺名称:</view>
+		<view style="width:76%;"><input placeholder="请填写店铺名称" value="{{web_sForm.login_name}}"  data-key="login_name" bindblur="changeBind"></input></view>
+	</view>
+</view>
+<view class="user_input">
+	<view class="users_detail flexRowBetween">
+		<view class="input_note" style="width:24%;">店铺地址:</view>
+		<view style="width:76%;"><input placeholder="请填写店铺地址" value="{{web_sForm.address}}"  data-key="address" bindblur="changeBind"></input></view>
+	</view>
+</view>
+
+<button class="submit_info" open-type="getUserInfo" bindgetuserinfo="submit" >
+	保存
+	</button>
+
+

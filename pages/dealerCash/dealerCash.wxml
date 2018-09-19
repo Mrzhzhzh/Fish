@@ -1,0 +1,29 @@
+<!--userPoster.wxml-->
+<view class="w710">
+	<view class="cash_top flexRowBetween">
+		<view class="top_left" style="font-size:36rpx;color:#00c6f7">
+			佣金：{{web_userData.info.data[0].balance}}
+		</view>
+		<view top_left>
+			<view class="submit_info" bindtap="intoPath"  data-path="/pages/dealerCashMo/dealerCashMo">
+				立即体现
+			</view>
+		</view>
+	</view>
+</view>
+<view  class="w710" style="border-top:solid 1px #e0e0e0;border-bottom:solid 1px #e0e0e0;">
+	<view style="height:80rpx;" class="flexRowBetween">
+		<view style="height:36rpx;padding-left:20rpx;border-left:solid 1px #00c6f7;font-size:28rpx;color:28rpx;">
+			提现记录
+		</view>
+	</view>
+</view>
+<view  class="w710">
+	<view class="cash_list">
+		<view class="flexRowBetween" style="height:50%;">	
+			<view style="font-size:26rpx;color:#666;">体现</view>
+			<view style="font-size:26rpx;color:#00c6f7;">+70</view>
+		</view>
+		<view style="font-size:24rpx;color:#999;height:50%;">2018-4-17</view>
+	</view>
+</view>

@@ -1,0 +1,33 @@
+<!--manageAddress.wxml-->
+<view class="user_input">
+	<view class="users_detail flexRowBetween">
+		<view class="input_note">姓名:</view>
+		<input placeholder="请输入姓名" value="{{web_mainData.name}}"  data-key="name" bindblur="inputChange"></input>
+	</view>
+</view>
+<view class="user_input">
+	<view class="users_detail flexRowBetween">
+		<view class="input_note">电话:</view>
+		<input placeholder="请输入手机号码" style="width:64%;" value="{{web_mainData.phone}}"  data-key="phone" bindblur="inputChange"></input>
+		<view class="address_right" style="width:13%;">
+			<text>+86</text>
+			<image src="/images/next_page.jpg"></image>
+		</view>
+	</view>
+</view>
+<view class="user_input">
+	<view class="users_detail flexRowBetween"   bindtap="intoPath" data-path="/pages/userAddress/userAddress">
+		<view class="input_note">地址:</view>
+		<view style="width:72%;color:#b2b2b2;font-size:30rpx;">请选择地址</view>
+		<view class="next_page" style="width:5%;float:right;">
+			<image src="/images/next_page.jpg" style=""></image>
+		</view>
+	</view>
+</view>
+<view class="btn flexRowBetween">
+	<view class="submit_info cancel">取消</view>
+	<view class="submit_info" bindtap="submit">
+		保存
+	</view>
+</view>
+

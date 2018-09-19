@@ -1,0 +1,36 @@
+/**index.wxss**/
+.input_note{
+	width:15%;
+	color:#363636;
+	font-size:32rpx;
+}
+.users_detail{
+	width:100%;
+	align-items:center;
+}
+.user_input{
+	height:90rpx;
+	line-height:90rpx;
+	border-bottom:solid 1px #e0e0e0;
+	padding:0px 25rpx;
+	align-items:center;
+	}
+.user_input input{
+	height:32rpx;
+	line-height:32rpx;
+	color:#b2b2b2;
+	font-size:30rpx;
+	width:85%;
+	align-items:center;
+}
+.btn{
+	padding:0 55rpx;
+	margin-top:50rpx;
+}
+.cancel{
+	background:#aaa;
+}
+.submit_info{
+	margin-top:50rpx;
+	font-size:28rpx;
+}

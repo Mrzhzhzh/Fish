@@ -1,0 +1,118 @@
+<!--dealers.wxml-->
+<view class="date" style="{{fonts[4].font}}">
+	<view class="date_item">
+		<view style="width:45%;display:flex;align-items:center;">
+			<view class="date_left" style="color:#2e2e2e;width:100%;">
+				<picker  mode="date" value="{{web_startTime}}" data-type="startTime" bindchange="bindTimeChange" >
+					<view style="display:flex;align-items:center;width:100%;height:100%;">
+						<view style="width:85%;height:70rpx;">
+						    <view class="picker text">
+						      起始日期
+						    </view>
+						    <view class="text" style="{{fonts[2].font}}">{{web_startTime}}</view>
+						</view>
+						<view style="width:15%;height:70rpx;align-items:center;">
+							<image src="/images/up_icon2.jpg"></image>
+						</view>
+					</view>	
+				</picker>
+			    
+			</view>
+			
+		</view>	
+	</view>
+	<view class="date_item">
+		<view style="width:45%;display:flex;align-items:center;">
+			<view class="date_left" style="color:#2e2e2e;width:100%;">
+				<picker  mode="date" value="{{web_endTime}}" data-type="endTime" bindchange="bindTimeChange" >
+					<view style="display:flex;align-items:center;width:100%;height:100%;">
+						<view style="width:85%;height:70rpx;">
+						    <view class="picker text">
+						      截至日期
+						    </view>
+						    <view class="text" style="{{fonts[2].font}}">{{web_endTime}}</view>
+					    </view>
+					    <view style="width:15%;height:70rpx;">
+							<image src="/images/up_icon1.jpg"></image>
+						</view>
+					</view>
+				</picker>
+			</view>
+			
+		</view>	
+	</view>		
+</view>
+<view class="store">
+	<view class="store_list flexRowBetween">
+		<view class="store_in flexRowBetween">
+			<view class="store_left">
+				<image src="/images/user_icon2.png"></image>
+			</view>
+			<view class="store_center">
+				<view class="text1 flex" >
+					<view class="text2">店铺名：</view>
+					<view class="text3">名称名称名称</view>
+				</view>
+				<view class="text1 flex">
+					<view class="text2">店主姓名：</view>
+					<view  class="text3">姓名</view>
+				</view>
+				<view class="text1 flex">
+					<view class="text2">加入时间：</view>
+					<view  class="text3">2018-08-30</view>
+				</view>
+			</view>
+			<view class="store_right" >
+				详情
+			</view>
+		</view>
+	</view>
+	<view class="store_list flexRowBetween">
+		<view class="store_in flexRowBetween">
+			<view class="store_left">
+				<image src="/images/user_icon2.png"></image>
+			</view>
+			<view class="store_center">
+				<view class="text1 flex" >
+					<view class="text2">店铺名：</view>
+					<view class="text3">名称名称名称</view>
+				</view>
+				<view class="text1 flex">
+					<view class="text2">店主姓名：</view>
+					<view  class="text3">姓名</view>
+				</view>
+				<view class="text1 flex">
+					<view class="text2">加入时间：</view>
+					<view  class="text3">2018-08-30</view>
+				</view>
+			</view>
+			<view class="store_right" >
+				详情
+			</view>
+		</view>
+	</view>
+	<view class="store_list flexRowBetween">
+		<view class="store_in flexRowBetween">
+			<view class="store_left">
+				<image src="/images/user_icon2.png"></image>
+			</view>
+			<view class="store_center">
+				<view class="text1 flex" >
+					<view class="text2">店铺名：</view>
+					<view class="text3">名称名称名称</view>
+				</view>
+				<view class="text1 flex">
+					<view class="text2">店主姓名：</view>
+					<view  class="text3">姓名</view>
+				</view>
+				<view class="text1 flex">
+					<view class="text2">加入时间：</view>
+					<view  class="text3">2018-08-30</view>
+				</view>
+			</view>
+			<view class="store_right" >
+				详情
+			</view>
+		</view>
+	</view>
+</view>
