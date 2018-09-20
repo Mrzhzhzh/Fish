@@ -1,52 +1,112 @@
 //logs.js
 import {Api} from '../../utils/api.js';
-var api = new Api();
-const app = getApp()
-
+const api = new Api();
 
 Page({
-
-
   data: {
-  
-    QrData:[]
+    sForm:{
+      name:'',
+      phone:'',
+      address:'',
+
+      login_name:'',
+      password:''  
+    },
+    mainData:[],
+
 
   },
-    
+
 
   onLoad(){
     const self = this;
-    self.getQrData();
-    this.setData({
-      fonts:app.globalData.font
-    })
+
+
   },
-  
+
+
+  changeBind(e){
+    const self = this;
+    api.fillChange(e,self,'sForm');
+    console.log(self.data.sForm);
+    self.setData({
+      web_sForm:self.data.sForm,
+    });    
+  },
+
+
   intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');
   },
+  
 
-  getQrData(){
+  register(){
     const self = this;
-    const postData = {};
-    postData.token = wx.getStorageSync('token');
-    postData.qrInfo = {
-      scene:wx.getStorageSync('info').user_no,
-      path:'pages/index/index',
+    const postData = {
+      thirdapp_id:getApp().globalData.thirdapp_id,
+      login_name:self.data.sForm.login_name,
+      password:self.data.sForm.password,
+      name:self.data.sForm.name,
+      address:self.data.sForm.address,
+      phone:self.data.sForm.phone,  
     };
-    postData.output = 'url';
-    postData.ext = 'png';
     const callback = (res)=>{
-      console.log(res);
-      self.data.QrData = res;
-      self.setData({
-        web_QrData:self.data.QrData,
-      });
-     
       wx.hideLoading();
+      if(res.solely_code==100000){
+        api.showToast('申请成功','none');
+        setTimeout(function(){
+          api.pathTo('/pages/dealers1/dealers1','redi');
+        },800)   
+      }else{
+        api.dealRes(res);
+      }     
     };
-    api.getQrCode(postData,callback);
- },
+    api.register(postData,callback);
+  },
 
+  checkRegister(){
+    const self = this;
+    const postData = {
+      login_name:self.data.sForm.login_name
+    };
+    const callback = (res)=>{
+      wx.hideLoading();
+      if(res.info.data&&res.info.data[0].status==1){
+        setTimeout(function(){
+          api.pathTo('/pages/dealers1/dealers1','redi');
+        },800)
+      }else if(res.info.data&&res.info.data[0].status==0){
+        console.log(666)
+        setTimeout(function(){
+          api.pathTo('/pages/dealers2/dealers2','redi');
+        },800)
+      }else if(res.info.data&&res.info.data[0].status== -1){
+        api.showToast('审核被拒绝','none')
+      }
+  
+    };
+    api.checkRegister(postData,callback);
+  },
+
+
+
+
+
+
+  submit(){
+    const self = this;
+    var phone = self.data.sForm.phone;
+    const pass = api.checkComplete(self.data.sForm);
+    if(pass){
+        if(phone.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(phone)){
+          api.showToast('手机格式错误','fail')
+        }else{
+          self.register();       
+        }
+    }else{
+      api.showToast('请补全信息','fail');
+    };
+  },
+  
 })

@@ -100,7 +100,11 @@ Page({
       passage2:self.data.submitData.passage2,
       passage3:self.data.submitData.passage3,
       passage4:self.data.submitData.passage4,
-      snap_address:self.data.addressData.info.data[0]
+      snap_address:self.data.addressData.info.data[0],
+      transport_status:1
+    }
+    postData.searchItem = {
+      id:self.data.orderData.id
     }
     const callback  = res=>{
       if(res.solely_code==100000){
@@ -125,10 +129,10 @@ Page({
 
   submit(){
     const self = this;
-    var phone = self.data.submitData.phone;
+    var passage4 = self.data.submitData.passage4;
     const pass = api.checkComplete(self.data.submitData);
     if(pass){
-      if(phone.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(phone)){
+      if(passage4.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(passage4)){
         api.showToast('手机格式不正确','none')
       }else{    
           wx.showLoading();
@@ -175,8 +179,7 @@ Page({
     const self = this;
     const postData = {
       searchItem:{
-        passage1:self.data.submitData.passage2,
-        passage2:self.data.submitData.passage3,
+        passage1:self.data.submitData.passage1,
         user_no:wx.getStorageSync('info').user_no
       },
 
@@ -190,6 +193,8 @@ Page({
         self.setData({
           web_submitData:self.data.submitData,
         });
+      }else if(res.info.data.length>0){
+        self.data.orderData = res.info.data[0]
       }
     };
     api.orderGet(postData,callback);
@@ -221,6 +226,7 @@ Page({
 
   confirm(){
     const self = self;
+    wx.hideLoading();
     this.setData({
       isShow:true,
     })

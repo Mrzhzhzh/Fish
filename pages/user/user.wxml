@@ -6,7 +6,6 @@
           <open-data type="userAvatarUrl"></open-data>
     </view>
     <view class="member_name"><span><open-data  type="userNickName" ></open-data></span></view>
-    <view class="member_phone">13302144444</view>
   </view>
 </view>
 

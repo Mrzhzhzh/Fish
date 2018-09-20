@@ -57,7 +57,7 @@ Page({
           count:-self.data.submitData.score,
           trade_info:self.data.submitData.trade_info,
           status:0,
-          type:3
+          type:2
         }
     };
     const callback = (res)=>{

@@ -22,23 +22,42 @@
 <view class="w710">
 	<view class="user_input">
 		<view class="users_detail flexRowBetween">
+			<view class="input_note">账号:</view>
+			<input placeholder="请输入账号" value="{{web_sForm.login_name}}"  data-key="login_name" bindblur="changeBind"></input>
+		</view>
+	</view>
+	<view class="user_input">
+		<view class="users_detail flexRowBetween">
+			<view class="input_note">密码:</view>
+			<input placeholder="请输入密码" value="{{web_sForm.password}}"  data-key="password" bindblur="changeBind"></input>
+		</view>
+	</view>
+	<view class="user_input">
+		<view class="users_detail flexRowBetween">
 			<view class="input_note">姓名:</view>
-			<input placeholder="请输入姓名" value="{{web_mainData.name}}"  data-key="name" bindblur="inputChange"></input>
+			<input placeholder="请输入姓名" value="{{web_sForm.name}}"  data-key="name" bindblur="changeBind"></input>
 		</view>
 	</view>
 	<view class="user_input">
 		<view class="users_detail flexRowBetween">
 			<view class="input_note">电话:</view>
-			<input placeholder="请输入电话" value="{{web_mainData.name}}"  data-key="name" bindblur="inputChange"></input>
+			<input placeholder="请输入电话" value="{{web_sForm.phone}}"  data-key="phone" bindblur="changeBind"></input>
 		</view>
 	</view>
 	<view class="user_input">
 		<view class="users_detail flexRowBetween">
 			<view class="input_note">地址:</view>
-			<input placeholder="请填写地址" value="{{web_mainData.name}}"  data-key="name" bindblur="inputChange"></input>
+			<input placeholder="请填写地址" value="{{web_sForm.address}}"  data-key="address" bindblur="changeBind"></input>
 		</view>
 	</view>
 </view>
-<view class="submit_info" style="margin-top:50rpx;"  bindtap="intoPath" data-path="/pages/dealers1/dealers1">
-		下一步
+<view style="display:flex">
+	<view class="submit_info" style="margin-top:50rpx;"  bindtap="submit" >
+			下一步
+	</view>
+
+	<view class="submit_info" style="margin-top:50rpx;"  bindtap="checkRegister" >
+			查询审核状态
+	</view>
 </view>
+<view style="font-size:15px;text-align:center;color:#999;margin-top:20px">(输入用户名即可查询审核状态)</view>

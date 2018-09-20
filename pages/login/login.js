@@ -32,6 +32,8 @@ Page({
     }
   },
 
+  
+
   submit(){
     const self = this;
     wx.showLoading(); 

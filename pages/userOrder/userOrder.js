@@ -32,10 +32,10 @@ Page({
 
   onShow(){
     const self = this;
-    if(wx.getStorageSync('info').behavior==0){
+    if(wx.getStorageSync('info').behavior==0&&!wx.getStorageSync('threeToken')){
       self.data.title = '普通用户',
       self.data.token = wx.getStorageSync('token')
-    }else if(wx.getStorageSync('info').behavior==1){
+    }else if(wx.getStorageSync('info').behavior==1&&!wx.getStorageSync('threeToken')){
       self.data.title = '代理商',
       self.data.token = wx.getStorageSync('token')
     }else if(wx.getStorageSync('threeToken')){
@@ -54,7 +54,7 @@ Page({
     };
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
-    postData.token = self.data.token;
+    postData.token = wx.getStorageSync('token');
     postData.searchItem = api.cloneForm(self.data.searchItem)
     postData.order = {
       create_time:'desc',

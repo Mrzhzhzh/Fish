@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 34,
+			"current": 35,
 			"list": [
 				{
 					"id": -1,
@@ -242,7 +242,13 @@
 				{
 					"id": -1,
 					"name": "代理",
-					"pathName": "pages/userAgent/userAgent"
+					"pathName": "pages/userAgent/userAgent",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "注册",
+					"pathName": "pages/dealers/dealers"
 				}
 			]
 		}

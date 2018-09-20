@@ -6,7 +6,7 @@
 		</view>
 		<view top_left>
 			<view class="submit_info" bindtap="intoPath"  data-path="/pages/dealerCashMo/dealerCashMo">
-				立即体现
+				立即提现
 			</view>
 		</view>
 	</view>
@@ -19,11 +19,13 @@
 	</view>
 </view>
 <view  class="w710">
-	<view class="cash_list">
-		<view class="flexRowBetween" style="height:50%;">	
-			<view style="font-size:26rpx;color:#666;">体现</view>
-			<view style="font-size:26rpx;color:#00c6f7;">+70</view>
+	<block wx:for="{{web_mainData}}" wx:key="id">
+		<view class="cash_list">
+			<view class="flexRowBetween" style="height:50%;">	
+				<view style="font-size:26rpx;color:#666;">{{item.trade_info}}</view>
+				<view style="font-size:26rpx;color:#00c6f7;">{{item.count}}</view>
+			</view>
+			<view style="font-size:24rpx;color:#999;height:50%;">{{item.create_time}}</view>
 		</view>
-		<view style="font-size:24rpx;color:#999;height:50%;">2018-4-17</view>
-	</view>
+	</block>
 </view>

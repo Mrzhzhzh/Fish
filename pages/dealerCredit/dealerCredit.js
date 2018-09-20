@@ -57,7 +57,7 @@ Page({
   getUserInfoData(){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('ThreeToken');
+    postData.token = wx.getStorageSync('threeToken');
     const callback = (res)=>{
       self.data.userData = res;
       self.setData({
@@ -88,7 +88,7 @@ Page({
         self.data.mainData.push.apply(self.data.mainData,res.info.data);
       }else{
         self.data.isLoadAll = true;
-        api.showToast('没有更多了','fail');
+        api.showToast('没有更多了','none');
       };
       self.setData({
         web_mainData:self.data.mainData,

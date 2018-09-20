@@ -52,6 +52,32 @@ class Api extends Base{
         this.request(allParams);
     }
 
+
+    register(param,callback){
+        var allParams ={
+            url:'Func/Common/register',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);
+    }    
+
+    checkRegister(param,callback){
+        var allParams ={
+            url:'Func/Common/checkRegister',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);
+    }   
+
+
     upload(param,callback){
         var allParams ={
             url:'Base/FtpImage/upload',

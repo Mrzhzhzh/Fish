@@ -41,10 +41,10 @@ Page({
       })
     };
 
-    if(wx.getStorageSync('info').behavior==0){
+    if(wx.getStorageSync('info').behavior==0&&!wx.getStorageSync('threeToken')){
       self.data.title = '普通用户',
       self.data.token = wx.getStorageSync('token')
-    }else if(wx.getStorageSync('info').behavior==1){
+    }else if(wx.getStorageSync('info').behavior==1&&!wx.getStorageSync('threeToken')){
       self.data.title = '代理商',
       self.data.token = wx.getStorageSync('token')
     }else if(wx.getStorageSync('threeToken')){
@@ -64,7 +64,7 @@ Page({
     };
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
-    postData.token = self.data.token;
+    postData.token = wx.getStorageSync('threeToken');
     postData.searchItem = api.cloneForm(self.data.searchItem)
     postData.order = {
       create_time:'desc'
@@ -74,7 +74,7 @@ Page({
         self.data.mainData.push.apply(self.data.mainData,res.info.data);
       }else{
         self.data.isLoadAll = true;
-        api.showToast('没有更多了','fail');
+        api.showToast('没有更多了','none');
       };
       self.setData({
         buttonClicked:true,
@@ -112,7 +112,7 @@ Page({
     postData.searchItem = {};
     postData.searchItem.id = api.getDataSet(e,'id');
     const callback  = res=>{
-      api.showToast('已确认收货','fail');
+      api.showToast('已确认收货','none');
       self.getMainData(true);
     };
     api.orderUpdate(postData,callback);
@@ -154,7 +154,7 @@ Page({
       };
         api.realPay(res.info,payCallback);  
       }else{
-        api.showToast('发起微信支付失败','fail')
+        api.showToast('发起微信支付失败','none')
       };
     };
     api.pay(postData,callback);

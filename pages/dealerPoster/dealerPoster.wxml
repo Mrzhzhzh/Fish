@@ -1,7 +1,7 @@
 <!--userPoster.wxml-->
 <view class="poster">
 	<view class="poster_txt1" style="{{fonts[4].font}}">
-		娃娃鱼
+		娃娃鱼线上平台
 	</view>
 	<view class="poster_img">
 		<image src="/images/qrcoed.jpg"></image>

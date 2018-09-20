@@ -182,111 +182,115 @@ Page({
 
   addOrder(){
     const self = this;
-    if(wx.getStorageSync('info')&&wx.getStorageSync('info').thirdApp.custom_rule.firstClass){
-      if(!self.data.order_id){
-        self.buttonClicked = true;
-        self.setData({
-          buttonClicked: true
-        });
-        const postData = [];
-        if(self.data.submitData.passage1.length>0){
-          for(var i=0;i<self.data.submitData.passage1.length;i++){
-            if(self.data.submitData.passage1[i]){
-              postData.push(
+    if(self.data.submitData.passage1==''&&self.data.submitData.passage4==''){
+      api.showToast('手机号与卡号必填一项',"none")
+    }else{
+      if(wx.getStorageSync('info')&&wx.getStorageSync('info').thirdApp.custom_rule.firstClass){
+        if(!self.data.order_id){
+          self.buttonClicked = true;
+          self.setData({
+            buttonClicked: true
+          });
+          const postData = [];
+          if(self.data.submitData.passage1.length>0){
+            for(var i=0;i<self.data.submitData.passage1.length;i++){
+              if(self.data.submitData.passage1[i]){
+                postData.push(
+                  {
+                    token:self.data.token,
+                    product:[
+                      {id:self.data.mainData[self.data.chooseIndex].id,count:1}
+                    ],
+                    pay:{wxPay:self.data.mainData[self.data.chooseIndex].price},
+                    type:1,
+                    data:{
+                      passage1:self.data.submitData.passage1[i],
+                      passage4:self.data.submitData.passage4 
+                    }
+                  }
+                );
+              };
+            };
+
+          }else{
+            postData.push(
+              {
+                token:self.data.token,
+                product:[
+                  {id:self.data.mainData[self.data.chooseIndex].id,count:1}
+                ],
+                pay:{wxPay:self.data.mainData[self.data.chooseIndex].price},
+                type:1,
+                data:{
+                  passage1:'',
+                  passage4:self.data.submitData.passage4 
+                }
+              }
+            );
+          };
+          var reward = (wx.getStorageSync('info').thirdApp.custom_rule.firstClass*self.data.mainData[self.data.chooseIndex].price)/100;
+          if(wx.getStorageSync('info').behavior==1&&wx.getStorageSync('info').parent_no!=''){
+            for(var i=0;i<postData.length;i++){
+              postData[i].payAfter = [
                 {
-                  token:self.data.token,
-                  product:[
-                    {id:self.data.mainData[self.data.chooseIndex].id,count:1}
-                  ],
-                  pay:{wxPay:self.data.mainData[self.data.chooseIndex].price},
-                  type:1,
+                  tableName:'FlowLog',
+                  FuncName:'add',
                   data:{
-                    passage1:self.data.submitData.passage1[i],
-                    passage4:self.data.submitData.passage4 
+                    count:reward,
+                    trade_info:'代理消费奖励',
+                    user_no:wx.getStorageSync('info').parent_no,
+                    type:2,
+                    thirdapp_id:getApp().globalData.thirdapp_id
                   }
                 }
-              );
+              ];
             };
           };
-
-        }else{
-          postData.push(
-            {
-              token:self.data.token,
-              product:[
-                {id:self.data.mainData[self.data.chooseIndex].id,count:1}
-              ],
-              pay:{wxPay:self.data.mainData[self.data.chooseIndex].price},
-              type:1,
-              data:{
-                passage1:'',
-                passage4:self.data.submitData.passage4 
-              }
-            }
-          );
-        };
-        var reward = (wx.getStorageSync('info').thirdApp.custom_rule.firstClass*self.data.mainData[self.data.chooseIndex].price)/100;
-        if(wx.getStorageSync('info').behavior==1&&wx.getStorageSync('info').parent_no!=''){
-          for(var i=0;i<postData.length;i++){
-            postData[i].payAfter = [
-              {
-                tableName:'FlowLog',
-                FuncName:'add',
-                data:{
-                  count:reward,
-                  trade_info:'代理消费奖励',
-                  user_no:wx.getStorageSync('info').parent_no,
-                  type:2,
-                  thirdapp_id:getApp().globalData.thirdapp_id
-                }
-              }
-            ];
-          };
-        };
-        
-        console.log('postData',postData);
-        const callback = (res)=>{
-          if(res&&res.solely_code==100000){
-            setTimeout(function(){
-              self.setData({
-                buttonClicked: false
-              })
-              self.buttonClicked = false;
-            }, 1000);
-            self.data.order_id = '';
-            for(var i=0;i<res.info.id.length;i++){
-              if(i>0){
-                self.data.order_id += '-';
+          
+          console.log('postData',postData);
+          const callback = (res)=>{
+            if(res&&res.solely_code==100000){
+              setTimeout(function(){
+                self.setData({
+                  buttonClicked: false
+                })
+                self.buttonClicked = false;
+              }, 1000);
+              self.data.order_id = '';
+              for(var i=0;i<res.info.id.length;i++){
+                if(i>0){
+                  self.data.order_id += '-';
+                };
+                self.data.order_id += res.info.id[i];
               };
-              self.data.order_id += res.info.id[i];
-            };
-            self.pay(self.data.order_id);         
-          }else{
-            api.showToast('网络故障','none')
-             self.setData({
-                buttonClicked: false
-              })
-            self.buttonClicked = false;
-          } 
+              self.pay(self.data.order_id);         
+            }else{
+              api.showToast('网络故障','none')
+               self.setData({
+                  buttonClicked: false
+                })
+              self.buttonClicked = false;
+            } 
+          };
+       /*   api.orderAddMulti(postData,callback);*/
+        }else{
+          self.pay(self.data.order_id);
+            self.setData({
+              buttonClicked: false
+            })
+          self.buttonClicked = false;
         };
-        api.orderAddMulti(postData,callback);
       }else{
-        self.pay(self.data.order_id);
+        var token = new Token();
+        const callback = (res)=>{
+          self.addOrder(res)
           self.setData({
             buttonClicked: false
           })
-        self.buttonClicked = false;
-      };
-    }else{
-      var token = new Token();
-      const callback = (res)=>{
-        self.addOrder(res)
-        self.setData({
-          buttonClicked: false
-        })
-        self.buttonClicked = false;
-      };
-      token.getUserInfo({},callback);
+          self.buttonClicked = false;
+        };
+        token.getUserInfo({},callback);
+      } 
     }
   },
 
