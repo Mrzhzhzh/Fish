@@ -52,10 +52,10 @@ Page({
 
   onShow(){
     const self = this;
-    if(wx.getStorageSync('info').behavior==0){
+    if(wx.getStorageSync('info').behavior==0&&!wx.getStorageSync('threeToken')){
       self.data.title = '普通用户',
       self.data.token = wx.getStorageSync('token')
-    }else if(wx.getStorageSync('info').behavior==1){
+    }else if(wx.getStorageSync('info').behavior==1&&!wx.getStorageSync('threeToken')){
       self.data.title = '代理商',
       self.data.token = wx.getStorageSync('token')
     }else if(wx.getStorageSync('threeToken')){
@@ -187,7 +187,6 @@ Page({
     }else{
       if(wx.getStorageSync('info')&&wx.getStorageSync('info').thirdApp.custom_rule.firstClass){
         if(!self.data.order_id){
-          self.buttonClicked = true;
           self.setData({
             buttonClicked: true
           });
@@ -254,7 +253,6 @@ Page({
                 self.setData({
                   buttonClicked: false
                 })
-                self.buttonClicked = false;
               }, 1000);
               self.data.order_id = '';
               for(var i=0;i<res.info.id.length;i++){
@@ -269,16 +267,14 @@ Page({
                self.setData({
                   buttonClicked: false
                 })
-              self.buttonClicked = false;
             } 
           };
-       /*   api.orderAddMulti(postData,callback);*/
+          api.orderAddMulti(postData,callback);
         }else{
           self.pay(self.data.order_id);
             self.setData({
               buttonClicked: false
             })
-          self.buttonClicked = false;
         };
       }else{
         var token = new Token();
@@ -306,16 +302,24 @@ Page({
     }else{
       postData.price = self.data.mainData[self.data.chooseIndex].price;
     };
-    
+    if(self.data.token==wx.getStorageSync('threeToken')){
+      postData.openid = wx.getStorageSync('info').openid
+    };
     const callback = (res)=>{
       wx.hideLoading();
       if(res.solely_code==100000){
         const payCallback=(payData)=>{
           if(payData==1){
-            setTimeout(function(){
-              api.pathTo('/pages/userOrder/userOrder','redi');
-            },800)  
-          };   
+            if(self.data.token==wx.getStorageSync('threeToken')){
+              setTimeout(function(){
+                api.pathTo('/pages/dealerOrder/dealerOrder','redi');
+              },800) 
+            }else{
+              setTimeout(function(){
+                api.pathTo('/pages/userOrder/userOrder','redi');
+              },800) 
+            };   
+          }
         };
         api.realPay(res.info,payCallback);  
       }else{

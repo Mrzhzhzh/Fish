@@ -72,6 +72,7 @@ Page({
     postData.data = {
       login_name:self.data.sForm.login_name,
       parent_no:self.data.sForm.parent_no,
+      behavior:1
     };
     postData.searchItem ={
       status:1

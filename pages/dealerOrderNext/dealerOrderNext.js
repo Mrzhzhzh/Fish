@@ -150,6 +150,7 @@ Page({
     this.setData({
       num: num
     });
+    self.data.searchItem = {};
     if(num=='1'){
       self.data.searchItem.pay_status = '1';
       self.data.searchItem.transport_status = '0';

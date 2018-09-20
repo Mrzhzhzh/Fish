@@ -5,13 +5,11 @@ var app = getApp()
 
 Page({
   data: {
-   num:1,
-   mainData:[],
-   searchItem:{
-    thirdapp_id:'2',
-    pay_status : '1',
-    transport_status : '0',
-    order_step : '0',
+    num:0,
+    mainData:[],
+    searchItem:{
+      thirdapp_id:'2',
+      pay_status : '0',
     },
     buttonClicked:false,
 
@@ -77,7 +75,7 @@ Page({
         api.showToast('没有更多了','none');
       };
       self.setData({
-        buttonClicked:true,
+        buttonClicked:false,
       })
       wx.hideLoading();
       self.setData({
@@ -144,6 +142,9 @@ Page({
       wxPay:price,
       wxPayStatus:0
     };
+    if(self.data.token==wx.getStorageSync('threeToken')){
+      postData.openid = wx.getStorageSync('info').openid
+    };
     const callback = (res)=>{
       wx.hideLoading();
       if(res.solely_code==100000){
@@ -165,7 +166,8 @@ Page({
     this.setData({
       num: num
     });
-     if(num=='0'){
+    self.data.searchItem = {};
+    if(num=='0'){
       self.data.searchItem.pay_status = '0';
     }else if(num=='1'){
       self.data.searchItem.pay_status = '1';

@@ -63,9 +63,6 @@
 						<view  class="text3">{{item.update_time}}</view>
 					</view>
 				</view>
-				<view class="store_right" >
-					详情
-				</view>
 			</view>
 		</view>
 	</block>
