@@ -15,6 +15,9 @@
 .login_item{
 	margin-bottom:30rpx;
 }
+.login_item input{
+	font-size:28rpx;
+}
 .login_item button{
 	color:#fff;
 	font-size:22rpx;

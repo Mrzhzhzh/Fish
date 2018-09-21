@@ -19,29 +19,27 @@
     <view class="member_phone">{{web_mainData.info.phone}}</view>
     <view class="agent">
         <view class="agent_cont">
-              <view style="width:100%;margin-top:20rpx;" class="flexRowBetween">
+              <view style="width:70%;margin:20rpx auto 0 auto;" class="flexRowBetween">
                   <view style="width:100%;overflow:hidden;height:40rpx;" class="flexRowBetween">
-                      <view style="width:15%;height:40rpx;overflow:hidden;align-items:center;">
+                      <view style="width:14%;height:40rpx;overflow:hidden;align-items:center;">
                           <image src="/images/agent_icon1.png" style="width:36rpx;height:36rpx;"></image>
                       </view>
-                      <view style="width:85%;font-size:28rpx;color:#666;height:40rpx;" class="avoidOverflow">编码：{{web_mainData.user_no}}</view>
+                      <view style="width:86%;font-size:28rpx;color:#666;height:40rpx;" class="avoidOverflow">编码：{{web_mainData.user_no}}</view>
                   </view>
               </view>
-              <view style="width:100%;margin-top:20rpx;" class="flexRowBetween">
+              <view style="width:70%;margin:20rpx auto 0 auto;" class="flexRowBetween">
                   <view style="width:100%;overflow:hidden;height:40rpx;" class="flexRowBetween">
-                      <view style="width:15%;height:40rpx;overflow:hidden;align-items:center;">
+                      <view style="width:14%;height:40rpx;overflow:hidden;align-items:center;">
                           <image src="/images/agent_icon2.png" style="width:36rpx;height:36rpx;"></image>
                       </view>
-                      <view style="width:85%;font-size:28rpx;color:#666;height:40rpx;" class="avoidOverflow">名称:{{web_mainData.login_name}}</view>
+                      <view style="width:86%;font-size:28rpx;color:#666;" class="avoidOverflow">名称:{{web_mainData.login_name}}</view>
                   </view>
               </view>
-              <view style="width:100%;margin-top:20rpx;" class="flexRowBetween">
-                <view style="width:100%;margin-top:20rpx;height:40rpx;" class="flexRowBetween">
-                    <view style="width:7%;height:40rpx;overflow:hidden;align-items:center;">
-                        <image src="/images/agent_icon2.png" style="width:36rpx;height:36rpx;"></image>
-                    </view>
-                    <view style="width:93%;font-size:28rpx;color:#666;height:40rpx;" class="avoidOverflow">地址:{{web_mainData.info.address}}</view>
-                </view>
+              <view style="width:70%;height:40rpx;margin:20rpx auto 0 auto;" class="flexRowBetween">
+                  <view style="width:14%;height:40rpx;overflow:hidden;align-items:center;">
+                      <image src="/images/user_icon1.png" style="width:36rpx;height:36rpx;"></image>
+                  </view>
+                  <view style="width:86%;font-size:28rpx;color:#666;height:40rpx;" class="avoidOverflow">地址:{{web_mainData.info.address}}</view>
               </view>
         </view>
     </view>

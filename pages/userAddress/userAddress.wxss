@@ -15,7 +15,7 @@ page{
 	background:#fff;
 }
 .address_left{
-	width:70%;
+	width:100%;
 	overflow:hidden;
 }
 .address_left .text1{
@@ -23,6 +23,7 @@ page{
 	font-size:34rpx;}
 .text_other{
 	margin-top:30rpx;
+	font-size:32rpx;
 }
 .address_right{
 	font-size:30rpx;

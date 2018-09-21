@@ -1,7 +1,6 @@
 <!--buy.wxml-->
 <view class="w710"> 
   <view id="buy">
-    <image src="/images/buy_bg.jpg"></image>
     <view class="buy_cont">
         <view class="buy_wirte flex">
           <view class="input_before">分类:</view>
@@ -47,6 +46,7 @@
         </view>
     </view>
   </view>
+  <view class="buy_bg"><image src="/images/buy_bg.png"></image></view>
   <view id="regular">
     <view class="regular">
       <view class="regular_cont">

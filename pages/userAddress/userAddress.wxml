@@ -1,18 +1,22 @@
 <!--manageAddress.wxml-->
 <view id="address">
 	<block wx:for="{{web_mainData}}" wx:key="id">
-		<view class="address_item flexRowBetween" bindtap="choose" data-id="{{item.id}}">
-			<view class="address_left">
+		<view class="address_item" bindtap="choose" data-id="{{item.id}}">
+			<view class="address_left flexRowBetween">
 				<view class="text1">
 					{{item.name}}
 				</view>
-				<view class="text1 text_other avoidOverflow">
-					{{item.province+item.city+item.country+item.detail}}
+				<view class="address_right">
+				{{item.phone}}
 				</view>
 			</view>
-			<view class="address_right">
-				{{item.phone}}
+			<view class="text1 text_other avoidOverflow">
+					{{item.province+item.city+item.country+item.detail}}
+				
 			</view>
+		</view>
+		<view>
+			
 		</view>
 		<view class="address_set flexRowBetween">
 			<view class="default"  bindtap="{{item.isdefault=='0'?'updateAddress':''}}" data-id="{{item.id}}">

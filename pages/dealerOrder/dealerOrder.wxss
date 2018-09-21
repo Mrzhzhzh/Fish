@@ -98,11 +98,8 @@ page{
 }
 
 .order_handle{
-background:#fff;
-
-}
-.order_del{
-
+	background:#fff;
+	height:88rpx;
 }
 .order_total{
 	width:35%;
@@ -119,6 +116,7 @@ background:#fff;
 	margin-right:20rpx;
 	color:#666;
 	background:linear-gradient(to right,rgba(166,205,7,1.00),rgba(0,186,241,1.00));
+	margin-top:12rpx;
 }
 .text1{
 	color:#e62c2c;

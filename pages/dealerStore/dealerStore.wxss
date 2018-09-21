@@ -40,17 +40,17 @@
 .store_in{
 	height:128rpx;
 	width:100%;
+	overflow:hidden;
 }
 .store_left{
-	width:24%;
+	width:22%;
 }
 .store_left image{
 	width:145rpx;
 	height:128rpx;
 }
 .store_center{
-	width:58%;
-	text-align:left;
+	width:76%;
 }
 .store_right{
 	width:18%;

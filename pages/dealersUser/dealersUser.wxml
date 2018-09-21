@@ -8,9 +8,9 @@
       </view>
       <view class="member_name">{{web_mainData.info.data[0].info.name}}</view>
       <view class="member_phone">{{web_mainData.info.data[0].info.phone}}</view>
-      <view class="location flexRowBetween">
-          <view class="local_img" style="height:40rpx;align-items:center;"><image src="/images/user_icon1.png"></image></view>
-          <view class="local_address" style="height:40rpx;align-items:center;">地址：{{web_mainData.info.data[0].info.address}}</view>
+      <view class="location flexRowCenter">
+          <view class="local_img" style="height:40rpx;align-items:center;max-width:14%;"><image src="/images/user_icon1.png"></image></view>
+          <view class="local_address avoidOverflow" style="height:40rpx;align-items:center;max-width:76%;">地址：{{web_mainData.info.data[0].info.address}}</view>
       </view>
     </view>
   </view>
