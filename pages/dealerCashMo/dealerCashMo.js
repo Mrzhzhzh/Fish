@@ -61,10 +61,13 @@ Page({
         }
     };
     const callback = (res)=>{
-      api.showToast('申请成功','fail'); 
-      wx.navigateBack({
-        delta: 1
-      }) 
+      api.showToast('申请成功','none'); 
+        setTimeout(function(){
+          wx.navigateBack({
+            delta: 1
+          })
+        },300);
+       
     };
     api.flowLogAdd(postData,callback)
   },
