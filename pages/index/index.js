@@ -104,7 +104,8 @@ Page({
       transport_status:1
     }
     postData.searchItem = {
-      id:self.data.orderData.id
+      id:self.data.orderData.id,
+      user_type:self.data.orderData.user_type
     }
     const callback  = res=>{
       if(res.solely_code==100000){
@@ -180,14 +181,15 @@ Page({
     const postData = {
       searchItem:{
         passage1:self.data.submitData.passage1,
-        user_no:wx.getStorageSync('info').user_no
+        passage2:self.data.submitData.passage2,
+        user_type:['in',[0,1]]
       },
 
       token:wx.getStorageSync('token')
     };
     const callback = (res)=>{
       if(res.info.data.length==0){
-        api.showToast('信息填写错误或此卡号不属于您！','none');
+        api.showToast('信息填写错误或卡号不存在！','none');
         self.data.submitData.passage1='';
         self.data.submitData.passage2='';
         self.setData({
