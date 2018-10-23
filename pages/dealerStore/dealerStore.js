@@ -21,8 +21,7 @@ Page({
   onLoad(){
     const self = this;
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
-    self.getMainData();
-    
+   
     this.setData({
       fonts:app.globalData.font
     })
@@ -33,7 +32,8 @@ Page({
     if(wx.getStorageSync('threeInfo')&&wx.getStorageSync('threeToken')){
       self.setData({
         web_show:true
-      })
+      });
+      self.getMainData();
     }else{
       wx.redirectTo({
         url: '/pages/login/login'

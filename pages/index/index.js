@@ -187,7 +187,7 @@ Page({
     };
     const callback = (res)=>{
       if(res.info.data.length==0){
-        api.showToast('卡号填写错误','none');
+        api.showToast('信息填写错误或此卡号不属于您！','none');
         self.data.submitData.passage1='';
         self.data.submitData.passage2='';
         self.setData({

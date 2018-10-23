@@ -54,14 +54,11 @@
     <view style="height:140rpx;line-height:140rpx;"><image src="/images/user2.png"></image></view>
     <view class="user_txt">收货地址</view>
   </view>
-  <view class="user_item" style="background:#f2fff5;" bindtap="intoPath" data-path="/pages/login/login">
+  <view class="user_item" style="background:#f2fff5;width:100%" bindtap="intoPath" data-path="/pages/login/login" >
     <view style="height:140rpx;line-height:140rpx;"><image src="/images/user3.png"></image></view>
     <view class="user_txt">经销商入口</view>
   </view>
-  <view class="user_item" style="background:#f2f9ff;"  bindtap="intoPath" data-path="/pages/userAgent/userAgent">
-    <view style="height:140rpx;line-height:140rpx;"><image src="/images/user4.png"></image></view>
-    <view class="user_txt">代理申请</view>
-  </view>
+
 </view>
 <view class="solely" style="font-size:20rpx;color:#666;text-align:center;">
   技术支持:西安纯粹科技有限公司

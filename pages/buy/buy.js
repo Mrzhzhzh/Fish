@@ -70,6 +70,18 @@ Page({
     const self = this;
     var newCard = self.data.cardNum[self.data.cardNum.length-1] + 1;
     self.data.cardNum.push(newCard);
+    console.log(newCard)
+    self.setData({
+      web_cardNum:self.data.cardNum
+    });
+    console.log(self.data.cardNum)
+  },  
+
+  minCardNum(e){
+    const self = this;
+    const index = api.getDataSet(e,'index');
+    var newCard = self.data.cardNum;
+    self.data.cardNum.splice(index,1)
     self.setData({
       web_cardNum:self.data.cardNum
     });

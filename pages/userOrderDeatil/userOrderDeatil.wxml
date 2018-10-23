@@ -16,9 +16,10 @@
 			<view class="detail_left" style="color:#e62c2c">金额:</view>
 			<view class="detail_right" style="color:#e62c2c">{{web_mainData.price}}</view>
 		</view>
-		<view class="detail_list flexRowBetween">
+		<view class="detail_list flexRowBetween" style="justify-content:flex-start">
 			<view class="detail_left"  style="width:22%;">物流编号:</view>
-			<view class="detail_right"  style="width:78%;">{{web_mainData.express_info?web_mainData.express_info:'暂未发货'}}</view>
+			<view class="detail_right"  style="width:55%;">{{web_mainData.express_info?web_mainData.express_info:'暂未发货'}}</view>
+			<view  bindtap="copyTBL" style="font-size:16px;color:red" wx:if="{{web_mainData.express_info}}">一键复制</view>
 		</view>
 		<view class="left_img">
 			<image src="/images/circle1.png"></image>

@@ -59,14 +59,12 @@
             <image src="/images/index_icon6.png"></image>
           </view>
           <view class="input_before">地址:</view>
-          <view class="card_input" style="width:70%;"  bindtap="intoPath" data-path="/pages/userAddress/userAddress">
-            {{web_addressData.info.data[0].province+web_addressData.info.data[0].city+web_addressData.info.data[0].country+web_addressData.info.data[0].detail?web_addressData.info.data[0].province+web_addressData.info.data[0].city+web_addressData.info.data[0].country+web_addressData.info.data[0].detail:'请选择收获地址'}}
-          </view>
-          <view class="next_icon" style="width:7%;text-align:right;">
-            <image src="/images/next_page.jpg" style="width:18rpx;height:33rpx;"></image>
+          <view class="card_input" style="width:100%;"  bindtap="intoPath" data-path="/pages/userAddress/userAddress">
+            {{web_addressData.info.data[0].province+web_addressData.info.data[0].city+web_addressData.info.data[0].country+web_addressData.info.data[0].detail?web_addressData.info.data[0].province+web_addressData.info.data[0].city+web_addressData.info.data[0].country+web_addressData.info.data[0].detail:'请选择收货地址'}}
           </view>
         </view>
-        <view class="submit_info" bindtap="submit">确认提货</view>
+        
+        <button class="submit_info"  open-type="getUserInfo" bindgetuserinfo="submit">确认提货</button>
       </view>
     </view>
   </view>

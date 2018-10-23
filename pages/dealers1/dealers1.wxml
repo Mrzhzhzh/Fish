@@ -17,12 +17,6 @@
 				<image src="/images/progress3.jpg"></image>
 		</view>
 		<view class="txt">审核完成</view>
-
-		<!--
-		<view class="img_h">
-				<image src="/images/progress3_a.jpg"></image>
-		</view>
-		<view class="txt this_txt">审核完成</view> -->
 		
 	</view>
 </view>
@@ -37,5 +31,4 @@
 	</view>
 </view>
 <view style="font-size:28rpx;color:#666;margin-top:90rpx;width:100%;text-align:center;">提交成功，请等待管理员审核！</view>
-<!--
-<view style="font-size:28rpx;color:#666;margin-top:90rpx;width:100%;text-align:center;">审核成功</view> -->
+

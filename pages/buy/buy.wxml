@@ -17,10 +17,13 @@
           <view class="buy_wirte flex">
             <view class="input_before">卡号:</view>
             <view class="buy_input">
-              <input placeholder="请选择分类" bindblur="changeBind" data-key="passage1" data-index="{{index}}" ></input>
+              <input placeholder="请输入卡号" bindblur="changeBind" data-key="passage1" data-index="{{index}}" ></input>
             </view>
-            <view class="next_icon" style="width:18.5%;text-align:center;height:60rpx;" bindtap="addCardNum">
+              <view class="next_icon" style="width:18.5%;text-align:center;height:60rpx;" bindtap="addCardNum" wx:if="{{index==0}}">
                 <image src="/images/buy_add.png" style="width:60rpx;height:60rpx;"></image>
+              </view>
+               <view class="next_icon" style="width:18.5%;text-align:center;height:60rpx;" bindtap="minCardNum" wx:if="{{index>0}}" data-index="{{index}}">
+                <image src="/images/buy_min.png" style="width:60rpx;height:60rpx;"></image>
               </view>
           </view>
         </block>
@@ -28,7 +31,7 @@
         <view class="flex">
           <view class="input_before">金额:</view>
           <view  style="font-size:36rpx;color:#ff1212;">
-            {{web_mainData[web_chooseIndex].price*web_cardNum.length}}元
+            {{web_mainData[web_chooseIndex].price*web_cardNum.length?web_mainData[web_chooseIndex].price*web_cardNum.length:''}}元
           </view>
         </view>
         <view class="flex" style="margin-top:50rpx;">
@@ -39,7 +42,7 @@
           
         </view>
         <view style="padding-left:22%;font-size:20rpx;color:#666;margin-top:20rpx;">
-            (说明：卡号和手机号码必填一项，如无卡号请 填写手机号码，我们将会安排专人30分钟内与 您取得联系)
+            (说明：卡号和手机号码必填一项，如无卡号请 填写手机号码，我们将会安排专人30分钟内与您取得联系)
         </view>
         <view class="submit_info" bindtap="{{!buttonClicked?'addOrder':''}}">
           立即支付

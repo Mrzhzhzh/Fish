@@ -40,7 +40,7 @@ Page({
       self.data.title = '经销商',
       self.data.token = wx.getStorageSync('threeToken')
     };
-    self.getMainData()
+    self.getMainData(true)
   },
 
 
